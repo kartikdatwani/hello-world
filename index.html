@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A little hello to a world of possibilities.">
+  <title>Hello World</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100svh; display: grid; place-items: center; background: #f6f5f0; color: #232c28; font-family: system-ui, sans-serif; padding: 24px; }
+    main { text-align: center; max-width: 650px; }
+    .wave { display: inline-grid; place-items: center; width: 86px; height: 86px; border-radius: 26px; background: #e5eddf; font-size: 42px; }
+    h1 { font-size: clamp(48px, 10vw, 88px); letter-spacing: -.065em; line-height: 1.1; margin: 28px 0 18px; font-weight: 650; }
+    p { color: #626c65; font-size: 18px; line-height: 1.6; }
+    button { border: 0; border-radius: 100px; background: #304b3a; color: white; font: inherit; font-weight: 600; padding: 16px 28px; cursor: pointer; margin-top: 18px; transition: background .2s, transform .2s; }
+    button:hover { background: #203a29; transform: translateY(-2px); }
+    button:focus-visible { outline: 3px solid #789f65; outline-offset: 5px; }
+    #reply { min-height: 29px; font-size: 15px; }
+    footer { margin-top: 52px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #737c75; }
+    @media (prefers-reduced-motion: reduce) { button { transition: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="wave" role="img" aria-label="Waving hand">👋</span>
+    <h1>Hello, world.</h1>
+    <p>Every great thing starts with a simple hello.</p>
+    <button id="hello" type="button">Say hello <span aria-hidden="true">↗</span></button>
+    <p id="reply" role="status" aria-live="polite"></p>
+    <footer>A little beginning. Endless possibilities.</footer>
+  </main>
+  <script>
+    document.getElementById('hello').addEventListener('click', () => {
+      document.getElementById('reply').textContent = 'Hello there! Glad you’re here. ✨';
+    });
+  </script>
+</body>
+</html>
